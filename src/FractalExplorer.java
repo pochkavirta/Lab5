@@ -106,8 +106,7 @@ public class FractalExplorer {
                 drawFractal();
             } else if (command.equals("Сохранить")) {
                 JFileChooser myFileChooser = new JFileChooser();
-                FileFilter extensionFilter =
-                        new FileNameExtensionFilter("PNG Images", "png");
+                FileFilter extensionFilter = new FileNameExtensionFilter("PNG Images", "png");
                 myFileChooser.setFileFilter(extensionFilter);
                 myFileChooser.setAcceptAllFileFilterUsed(false);
                 int userSelection = myFileChooser.showSaveDialog(jImageDisplay);
@@ -117,9 +116,7 @@ public class FractalExplorer {
                         BufferedImage displayImage = jImageDisplay.getImage();
                         javax.imageio.ImageIO.write(displayImage, "png", file);
                     } catch (Exception exception) {
-                        JOptionPane.showMessageDialog(jImageDisplay,
-                                exception.getMessage(), "Не удалось сохранить изображение",
-                                JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(jImageDisplay, exception.getMessage(), "Не удалось сохранить изображение", JOptionPane.ERROR_MESSAGE);
                     }
                 } else return;
             }
